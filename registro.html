@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME BANK | REGISTRO</title>
+    <link rel="stylesheet" href="Style/registro.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
+        </div>
+    </div>
+    <div class="container">
+        <div class="tipoDocumento">
+            <input type="text" id="inputDocumento" placeholder="Tipo de documento" list="documentos" class="inputRegistro">
+            <datalist id="documentos">
+                <option value="Cedula Ciudadania"></option>
+                <option value="Pasaporte"></option>
+                <option value="Cedula Extranjeria"></option>
+            </datalist>
+        </div>
+        <div class="numeroDocumento">
+            <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputRegistro">
+        </div>
+        <div class="nombres">
+            <input type="text" id="inputNombre" placeholder="Nombres" class="inputRegistro">
+        </div>
+        <div class="apellidos">
+            <input type="text" id="inputApellidos" placeholder="Apellidos" class="inputRegistro">
+        </div>
+        <div class="tipoGenero">
+            <input type="text" id="genero" placeholder="Genero" list="generos" class="inputRegistro">
+            <datalist id="generos">
+                <option value="Masculino"></option>
+                <option value="Femenino"></option>
+            </datalist>
+        </div>
+        <div class="telefono">
+            <input type="tel" id="inputTelefono" placeholder="Telefono" class="inputRegistro">
+        </div>
+        <div class="correo">
+            <input type="email" id="inputCorreo" placeholder="Correo electronico" class="inputRegistro">
+        </div>
+        <div class="ciudad">
+            <input type="text" id="inputCiudad" placeholder="Ciudad" list="ciudades" class="inputRegistro">
+            <datalist id="ciudades">
+                <option value="Bogota"></option>
+                <option value="Bucaramanga"></option>
+                <option value="Barranquilla"></option>
+                <option value="Medellin"></option>
+                <option value="Cartagena"></option>
+                <option value="Cali"></option>
+                <option value="Santa Marta"></option>
+                <option value="Floridablanca"></option>
+                <option value="Piedecuesta"></option>
+                <option value="Giron"></option>
+                <option value="Buenaventura"></option>
+            </datalist>
+        </div>
+        <div class="direccion">
+            <input type="text" id="inputDireccion" placeholder="Direccion" class="inputRegistro">
+        </div>
+        <div class="contraseña">
+            <input type="password" id="inputContraseña" placeholder="Contraseña" class="inputRegistro">
+        </div>
+        <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+        <button onclick="crearCuenta()" id="buttonCrearCuenta">CREAR CUENTA</button>
+        <br>
+        <a href="index.html" id="enlaceCancelar">CANCELAR</a>
+</body>
+</html>
