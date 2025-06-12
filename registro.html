@@ -84,7 +84,7 @@
     </div>
 
     <!-- Tu script de inicialización de Firebase -->
-    <script type="module">
+    <script type="module" defer>
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"; // Usando 10.11.1 como ejemplo, ajusta a tu versión
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
@@ -122,7 +122,6 @@
         // console.log("Firebase Database inicializada y accesible en window.firebaseDatabase");
 
     </script>
-    <script src="JS/registrarse.js" type="module"></script>
-    </script>
+    <script src="JS/registrarse.js" type="module" defer></script>
 </body>
 </html>

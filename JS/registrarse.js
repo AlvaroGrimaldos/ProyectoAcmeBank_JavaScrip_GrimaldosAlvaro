@@ -1,7 +1,7 @@
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
 // Función para escribir datos de un usuario
-export function crearCuenta() {
+window.crearCuenta = function() {
   const tipoDocumento = document.getElementById("inputDocumento");
   const valorTipoDocumento = tipoDocumento.value;
   const numeroDocumento = document.getElementById("inputNumeroDocumento");
@@ -37,29 +37,40 @@ export function crearCuenta() {
 
     // 2. Crear una referencia al lugar donde quieres guardar los datos.
     //    Aquí estamos creando una referencia a la ruta 'users/ID_DEL_USUARIO'
-    const referenciaUsuario = ref(db, 'users/' + userId);
+    const dbRef = ref(database);
+    get(child(dbRef, 'users')).then((snapshot) => {
+      let nuevoId = 1; // Por defecto, si no hay usuarios
+    
+      if (snapshot.exists()) {
+        const datosUsuarios = snapshot.val();
+        const ids = Object.keys(datosUsuarios).map(id => parseInt(id));
+        const maxId = Math.max(...ids);
+        nuevoId = maxId + 1;
+      }
+      const referenciaUsuario = ref(database, 'users/' + nuevoId);
 
-    // 3. Usar el método 'set' para guardar los datos en esa referencia.
-    //    El método 'set' sobrescribe cualquier dato que ya exista en esa ubicación.
-    set(referenciaUsuario, {
-      tipo_documento: valorTipoDocumento,
-      numero_documento: valorNumeroDocumento,
-      nombres: valorNombres,
-      apellidos: valorApellidos,
-      genero: valorGenero,
-      telefono: valorTelefono,
-      correo_electronico: valorCorreo,
-      ciudad: valorCiudad,
-      direccion: valorDireccion,
-      contraseña: valorContraseña,
-    })
-    .then(() => {
-      // ¡Datos guardados exitosamente! 🎉
-      console.log("Datos de usuario guardados correctamente.");
-    })
-    .catch((error) => {
-      // ¡Algo salió mal! 😥
-      console.error("Error al guardar los datos de usuario:", error);
+      // 3. Usar el método 'set' para guardar los datos en esa referencia.
+      //    El método 'set' sobrescribe cualquier dato que ya exista en esa ubicación.
+      set(referenciaUsuario, {
+        tipo_documento: valorTipoDocumento,
+        numero_documento: valorNumeroDocumento,
+        nombres: valorNombres,
+        apellidos: valorApellidos,
+        genero: valorGenero,
+        telefono: valorTelefono,
+        correo_electronico: valorCorreo,
+        ciudad: valorCiudad,
+        direccion: valorDireccion,
+        contraseña: valorContraseña,
+      })
+      .then(() => {
+        // ¡Datos guardados exitosamente! 🎉
+        console.log("Datos de usuario guardados correctamente.");
+      })
+      .catch((error) => {
+        // ¡Algo salió mal! 😥
+        console.error("Error al guardar los datos de usuario:", error);
+      });
     });
   }
   
