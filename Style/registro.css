@@ -8,6 +8,114 @@ html {
     height: 40px;
 }
 
+.banco {
+    text-align: left;
+}
+
+#imgBancoRegistro {
+    height: 40px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.container {
+    background-color: #D9D9D9;
+    width: 500px;
+    height: 500px;
+    border-radius: 40px;
+}
+
+.inputRegistro {
+    background-color: #2980B9;
+    border: none;
+    height: 35px;
+    width: 220px;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+.tipoDocumento {
+    float: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.numeroDocumento {
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.nombres {
+    float: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.apellidos {
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.tipoGenero {
+    float: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.telefono {
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.correo {
+    float: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.ciudad {
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.direccion {
+    float: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.contraseña {
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+#buttonCrearCuenta {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 44px;
+    width: 200px;
+    margin-left: 145px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#enlaceCancelar {
+    color: black;
+    padding-left: 200px;
+}
+
+#obligatorio {
+    padding-left: 165px;
+}
 .visible {
     font-size: 10px;
     color: red;
