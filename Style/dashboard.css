@@ -57,3 +57,14 @@ html {
     font-weight: bold;
 }
 
+a {
+    color: black;
+}
+
+.buttonMenu {
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+}
+
+

@@ -69,12 +69,12 @@ window.crearCuenta = function() {
       
       
       .then(() => {
-        // ¡Datos guardados exitosamente! 🎉
+        // ¡Datos guardados exitosamente! 
         console.log("Datos de usuario guardados correctamente.");
         window.location.href = "index.html"
       })
       .catch((error) => {
-        // ¡Algo salió mal! 😥
+        // ¡Algo salió mal!
         console.error("Error al guardar los datos de usuario:", error);
       });
     });
