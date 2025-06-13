@@ -56,5 +56,8 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
     }
 }
 
-
 obtenerUsuarioPorDocumento(usuario.numeroDocumento);
+const cerrarSesion = document.getElementById("cerrarSesion");
+cerrarSesion.addEventListener("click", e => {
+    localStorage.clear();
+})
