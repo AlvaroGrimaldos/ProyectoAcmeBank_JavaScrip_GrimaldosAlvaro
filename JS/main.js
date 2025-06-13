@@ -35,6 +35,12 @@ window.iniciarSesion = async function() {
                 }
             });
             if (acceso) {
+                const usuario = {
+                    numeroDocumento: valorNumeroDocumento,
+                    contraseña: valorContraseña,
+                    tipoDocumento: valorTipoDocumento
+                };
+                localStorage.setItem("usuario", JSON.stringify(usuario));
                 window.location.href = "dashboard.html";
             }else {
                 invalido.classList.replace('invisible', 'visible')
