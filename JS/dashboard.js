@@ -30,16 +30,22 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const correo = usuarioEncontrado.correo_electronico;
             const nombre = usuarioEncontrado.nombres;
             const telefono = usuarioEncontrado.telefono;
+            const numeroCuenta = usuarioEncontrado.numero_cuenta;
+            const numeroSaldo = usuarioEncontrado.saldo;
             const saludo = document.getElementById("Saludo");
             const ciudadint = document.getElementById("ciudad");
             const correoint = document.getElementById("correo");
             const telefonoint = document.getElementById("telefono");
             const fechaCreacionint = document.getElementById("fechaCreacion");
-    
+            const numeroCuentaint = document.getElementById("numeroCuenta");
+            const numeroSaldoint = document.getElementById("numeroSaldo");
+
             saludo.textContent = `Hola, ${nombre}`;
             ciudadint.textContent = ciudad;
             correoint.textContent = correo;
-            telefonoint.textContent = telefono
+            telefonoint.textContent = telefono;
+            numeroCuentaint.textContent = numeroCuenta;
+            numeroSaldoint.textContent = numeroSaldo;
     
             // return usuarioEncontrado;
           } else {
