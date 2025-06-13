@@ -40,6 +40,7 @@ window.crearCuenta = function() {
     const dbRef = ref(database);
     get(child(dbRef, 'users')).then((snapshot) => {
       let nuevoId = 1; // Por defecto, si no hay usuarios
+      let valorSaldo = 0;
     
       if (snapshot.exists()) {
         const datosUsuarios = snapshot.val();
@@ -62,6 +63,8 @@ window.crearCuenta = function() {
         ciudad: valorCiudad,
         direccion: valorDireccion,
         contraseña: valorContraseña,
+        numero_cuenta: valorNumeroDocumento + 1837214642,
+        saldo: valorSaldo,
       })
       
       
