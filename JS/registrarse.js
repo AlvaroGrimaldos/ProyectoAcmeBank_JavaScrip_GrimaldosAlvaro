@@ -63,6 +63,8 @@ window.crearCuenta = function() {
         direccion: valorDireccion,
         contraseña: valorContraseña,
       })
+
+      window.location.href = "index.html"
       .then(() => {
         // ¡Datos guardados exitosamente! 🎉
         console.log("Datos de usuario guardados correctamente.");
