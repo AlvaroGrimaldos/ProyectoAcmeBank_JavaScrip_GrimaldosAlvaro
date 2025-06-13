@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACME BANK | CAMBIAR CONTRASEÑA</title>
-    <link rel="stylesheet" href="Style/cambiarContraseña.css">
+    <link rel="stylesheet" href="Style/validarCambiarContraseña.css">
 </head>
 <body>
     <div class="header">
@@ -33,18 +33,21 @@
             <input type="email" id="inputCorreo" placeholder="Correo electronico" class="inputCambioContraseña">
         </div>
         <br>
+        <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
+        <span class="invisible" id="invalido">*Documento o correo invalidos*</span>
         <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
         <button onclick="verificar()" id="buttonVerificar">VERIFICAR</button>
         <br>
         <a href="index.html" id="enlaceVerificar">CANCELAR</a>
     </div>
 
-    <script type="module">
+    <!-- Tu script de inicialización de Firebase -->
+    <script type="module" defer>
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"; // Usando 10.11.1 como ejemplo, ajusta a tu versión
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+        // ¡Importa el SDK de Realtime Database también!
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"; // <- Añadimos esta línea
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -55,13 +58,28 @@
             storageBucket: "ecma-bank.firebasestorage.app",
             messagingSenderId: "160930340797",
             appId: "1:160930340797:web:47bd449fdeea57dd8cfcd4",
-            measurementId: "G-FBVZRWFKJX"
+            measurementId: "G-FBVZRWFKJX",
+            // Opcional: Añade la URL de tu base de datos por defecto si no es la estándar
+            // databaseURL: "https://ecma-bank-default-rtdb.firebaseio.com"
         };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
+        // Opcional: Si no pusiste databaseURL en config, obtén la instancia aquí si la necesitas globalmente
+        // const database = getDatabase(app);
+
+
+        // ¡Haz la instancia 'app' accesible globalmente!
+        window.firebaseApp = app;
+        // Opcional: Si obtuviste la instancia de DB, hazla global también
+        // window.firebaseDatabase = database;
+
+
+        console.log("Firebase app inicializada y accesible en window.firebaseApp");
+        // console.log("Firebase Database inicializada y accesible en window.firebaseDatabase");
+
     </script>
-    <script src="JS/cambiarContraseña.js" type="module"></script>
+    <script src="JS/validarCambiarContraseña.js" type="module"></script>
 </body>
 </html>
