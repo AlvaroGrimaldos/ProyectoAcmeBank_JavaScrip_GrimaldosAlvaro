@@ -63,17 +63,19 @@ window.crearCuenta = function() {
         direccion: valorDireccion,
         contraseña: valorContraseña,
       })
-
-      window.location.href = "index.html"
+      
+      
       .then(() => {
         // ¡Datos guardados exitosamente! 🎉
         console.log("Datos de usuario guardados correctamente.");
+        window.location.href = "index.html"
       })
       .catch((error) => {
         // ¡Algo salió mal! 😥
         console.error("Error al guardar los datos de usuario:", error);
       });
     });
+    
   }
   
   

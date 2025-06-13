@@ -34,6 +34,7 @@ window.verificar = async function() {
                 }
             });
             if (acceso) {
+                localStorage.setItem('numeroDocumento', valorNumeroDocumento);
                 window.location.href = "cambioContraseña.html";
             }else {
                 invalido.classList.replace('invisible', 'visible')
