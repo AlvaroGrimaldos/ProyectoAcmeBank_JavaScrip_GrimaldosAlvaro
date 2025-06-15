@@ -1,11 +1,11 @@
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
-
 const datosGuardados = localStorage.getItem("usuario");
 
+const usuario = JSON.parse(datosGuardados);
 
-const usuario = JSON.parse(datosGuardados); // convertimos a objeto
-
+    const cantidadConsignacion = document.getElementById("cantidadConsignar");
+    const valorCantidadConsignacion = cantidadConsignacion.value;
 
 async function obtenerUsuarioPorDocumento(numeroBuscado) {
     const dbRef = ref(getDatabase());
@@ -32,20 +32,11 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const telefono = usuarioEncontrado.telefono;
             const numeroCuenta = usuarioEncontrado.numero_cuenta;
             const numeroSaldo = usuarioEncontrado.saldo;
-            const saludo = document.getElementById("Saludo");
-            const ciudadint = document.getElementById("ciudad");
-            const correoint = document.getElementById("correo");
-            const telefonoint = document.getElementById("telefono");
-            const fechaCreacionint = document.getElementById("fechaCreacion");
-            const numeroCuentaint = document.getElementById("numeroCuenta");
-            const numeroSaldoint = document.getElementById("numeroSaldo");
+            const cuenta = document.getElementById("numeroCuenta");
+            const nombreint = document.getElementById("nombre");
 
-            saludo.textContent = `Hola, ${nombre}`;
-            ciudadint.textContent = ciudad;
-            correoint.textContent = correo;
-            telefonoint.textContent = telefono;
-            numeroCuentaint.textContent = numeroCuenta;
-            numeroSaldoint.textContent = numeroSaldo;
+            cuenta.textContent = numeroCuenta;
+            nombreint.textContent = nombre;
     
             // return usuarioEncontrado;
           } else {
@@ -63,15 +54,3 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
 }
 
 obtenerUsuarioPorDocumento(usuario.numeroDocumento);
-const cerrarSesion = document.getElementById("cerrarSesion");
-cerrarSesion.addEventListener("click", e => {
-    localStorage.clear();
-})
-
-window.transacciones = function() {
-  window.location.href = "transacciones.html";
-}
-
-window.consignar = function() {
-  window.location.href = "consignaciones.html"
-}
