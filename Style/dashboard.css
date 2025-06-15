@@ -3,8 +3,8 @@ html {
     padding: 25px;
     padding-left: 90px;
     display: flex;
-    flex-wrap: wrap;
-    flex-flow: row;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .header {
