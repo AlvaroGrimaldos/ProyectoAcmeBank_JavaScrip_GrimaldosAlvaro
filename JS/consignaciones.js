@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, get, child, update } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+import { getDatabase, ref, set, get, child, update, push } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
 const datosGuardados = localStorage.getItem("usuario");
 
@@ -81,11 +81,8 @@ window.consignar = function() {
         const cantidad = parseInt(valorCantidadConsignacion);
         const saldo = parseInt(saldoActual);
         const nuevoSaldo = saldo + cantidad;
-        const ids = Object.keys(datosUsuarios).map(id => parseInt(id));
-        const maxId = Math.max(...ids);
-        nuevoId = parseInt(maxId + 1);
       
-        const referenciaTransaccion = ref(database, `users/${userId}/transferencias/` + nuevoId);
+        const referenciaTransaccion = push(ref(database, `users/${userId}/transferencias`));
 
         set(referenciaTransaccion, {
           valor: valorCantidadConsignacion,
