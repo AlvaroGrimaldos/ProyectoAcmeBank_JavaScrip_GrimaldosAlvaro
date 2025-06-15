@@ -4,8 +4,7 @@ const datosGuardados = localStorage.getItem("usuario");
 
 const usuario = JSON.parse(datosGuardados);
 
-    const cantidadConsignacion = document.getElementById("cantidadConsignar");
-    const valorCantidadConsignacion = cantidadConsignacion.value;
+
 
 async function obtenerUsuarioPorDocumento(numeroBuscado) {
     const dbRef = ref(getDatabase());
@@ -20,6 +19,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
           const datos = childSnapshot.val();
           if (datos.numero_documento == numeroBuscado) {
             usuarioEncontrado = datos;
+            localStorage.setItem('userId', childSnapshot.key);
           }
         });
 
@@ -32,7 +32,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const telefono = usuarioEncontrado.telefono;
             const numeroCuenta = usuarioEncontrado.numero_cuenta;
             const numeroSaldo = usuarioEncontrado.saldo;
-            const cuenta = document.getElementById("numeroCuenta");
+            const cuenta = document.getElementById("numeroDeCuenta");
             const nombreint = document.getElementById("nombre");
 
             cuenta.textContent = numeroCuenta;
@@ -54,3 +54,46 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
 }
 
 obtenerUsuarioPorDocumento(usuario.numeroDocumento);
+
+window.consignar = function() {
+  const cantidadConsignacion = document.getElementById("cantidadConsignar");
+  const valorCantidadConsignacion = cantidadConsignacion.value;
+
+  if (!valorCantidadConsignacion.trim()) {
+    obligatorio.classList.replace('invisible', 'visible')
+    return false;
+  }else {
+    obligatorio.classList.replace('visible', 'invisible');
+
+    // 1. Obtener una instancia de la base de datos
+    const app = window.firebaseApp;
+    const database = getDatabase(app);
+    const userId = localStorage.getItem('userId');
+
+    const dbRef = ref(database);
+
+    get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+      let nuevoId = 1;
+
+      if (snapshot.exists()) {
+        const datosUsuarios = snapshot.val();
+        const ids = Object.keys(datosUsuarios).map(id => parseInt(id));
+        const maxId = Math.max(...ids);
+      }
+      const referenciaTransaccion = ref(database, `users/${userId}/transferencias`, nuevoId);
+
+      set(referenciaTransaccion, {
+        valor: valorCantidadConsignacion,
+        fecha: new Date().toLocaleDateString(),
+        referencia: Math.floor(Math.random() * (999999 - 100000 + 1)) + min,
+        tipo_transaccion: "Consignacion",
+        descripciom: "Consignacion por canal electronico",
+      })
+
+      .then(() => {
+        console.log("Consignacion exitosa.")
+        //Hacer que se le sume plata el usuraio 
+      })
+    })
+  }
+}

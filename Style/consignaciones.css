@@ -58,3 +58,12 @@ input::placeholder {
 .footer {
     text-align: center;
 }
+
+.visible {
+    font-size: 10px;
+    color: red;
+}
+
+.invisible {
+    font-size: 0px;
+}

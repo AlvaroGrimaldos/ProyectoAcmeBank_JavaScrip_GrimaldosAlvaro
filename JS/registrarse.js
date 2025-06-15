@@ -65,6 +65,7 @@ window.crearCuenta = function() {
         contraseña: valorContraseña,
         numero_cuenta: valorNumeroDocumento + 1837214,
         saldo: valorSaldo,
+        fecha: new Date().toLocaleDateString(),
       })
       
       
