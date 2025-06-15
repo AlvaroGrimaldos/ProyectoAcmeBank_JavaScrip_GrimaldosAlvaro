@@ -77,3 +77,7 @@ window.transacciones = function() {
 window.consignar = function() {
   window.location.href = "consignaciones.html"
 }
+
+window.retirar = function() {
+  window.location.href = "retirar.html"
+}
