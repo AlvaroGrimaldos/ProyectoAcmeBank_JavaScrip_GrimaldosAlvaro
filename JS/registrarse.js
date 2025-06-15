@@ -63,7 +63,7 @@ window.crearCuenta = function() {
         ciudad: valorCiudad,
         direccion: valorDireccion,
         contraseña: valorContraseña,
-        numero_cuenta: valorNumeroDocumento + 183721464,
+        numero_cuenta: valorNumeroDocumento + 1837214,
         saldo: valorSaldo,
       })
       
