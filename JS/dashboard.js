@@ -67,3 +67,7 @@ const cerrarSesion = document.getElementById("cerrarSesion");
 cerrarSesion.addEventListener("click", e => {
     localStorage.clear();
 })
+
+window.transacciones() = function() {
+  window.location.href = "transacciones.html";
+}
