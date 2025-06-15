@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+import { getDatabase, ref, set, get, child, update } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
 const datosGuardados = localStorage.getItem("usuario");
 
@@ -34,6 +34,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const numeroSaldo = usuarioEncontrado.saldo;
             const cuenta = document.getElementById("numeroDeCuenta");
             const nombreint = document.getElementById("nombre");
+            localStorage.setItem('saldo', numeroSaldo);
 
             cuenta.textContent = numeroCuenta;
             nombreint.textContent = nombre;
@@ -69,7 +70,6 @@ window.consignar = function() {
     const app = window.firebaseApp;
     const database = getDatabase(app);
     const userId = localStorage.getItem('userId');
-
     const dbRef = ref(database);
 
     get(child(dbRef, `users/${userId}`)).then((snapshot) => {
@@ -77,23 +77,44 @@ window.consignar = function() {
 
       if (snapshot.exists()) {
         const datosUsuarios = snapshot.val();
+        const saldoActual = datosUsuarios.saldo || 0;
+        const cantidad = parseInt(valorCantidadConsignacion);
+        const saldo = parseInt(saldoActual);
+        const nuevoSaldo = saldo + cantidad;
         const ids = Object.keys(datosUsuarios).map(id => parseInt(id));
         const maxId = Math.max(...ids);
+        nuevoId = parseInt(maxId + 1);
+      
+        const referenciaTransaccion = ref(database, `users/${userId}/transferencias/` + nuevoId);
+
+        set(referenciaTransaccion, {
+          valor: valorCantidadConsignacion,
+          fecha: new Date().toLocaleDateString(),
+          referencia: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+          tipo_transaccion: "Consignacion",
+          descripcion: "Consignacion por canal electronico",
+        })
+
+        .then(() => {
+          console.log("Consignacion exitosa.")
+          //Hacer que se le sume plata el usuraio 
+          update(ref(database, `users/${userId}`), {
+            saldo: nuevoSaldo
+          })
+        })
+        .then(() => {
+          console.log(`Consignacion exitosa. Nuevo saldo: ${nuevoSaldo}`);
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          console.error("Error al consignar:", error);
+        });
+      } else {
+        console.log("Usuario no encontrado.");
       }
-      const referenciaTransaccion = ref(database, `users/${userId}/transferencias`, nuevoId);
-
-      set(referenciaTransaccion, {
-        valor: valorCantidadConsignacion,
-        fecha: new Date().toLocaleDateString(),
-        referencia: Math.floor(Math.random() * (999999 - 100000 + 1)) + min,
-        tipo_transaccion: "Consignacion",
-        descripciom: "Consignacion por canal electronico",
-      })
-
-      .then(() => {
-        console.log("Consignacion exitosa.")
-        //Hacer que se le sume plata el usuraio 
-      })
     })
+    .catch((error) => {
+      console.error("Error al obtener el usuario: ", error);
+    });
   }
 }
