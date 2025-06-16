@@ -1,0 +1,41 @@
+html {
+    font-family: Arial;
+    padding: 25px;
+    padding-left: 90px;
+}
+
+#imgHeader {
+    height: 40px;
+}
+
+.buttonCertificadoBancario {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 170px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+table {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+
+td {
+    border: 1px solid black;
+}
+
+#enlaceSalir {
+    color: black;
+}
+
+.tittle {
+    line-height: 5px;
+}
