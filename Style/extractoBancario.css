@@ -7,3 +7,52 @@ html {
 #imgHeader {
     height: 40px;
 }
+
+.inputExtractoBancario {
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 200px;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+.buttonExtractoBancario {
+    background-color: black;
+    color: white;
+    border: none;
+    height: 35px;
+    width: 170px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#enlaceSalir {
+    color: black;
+}
+
+.visible {
+    font-size: 10px;
+    color: red;
+}
+
+.invisible {
+    font-size: 0px;
+}
+
+table {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}

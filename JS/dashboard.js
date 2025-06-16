@@ -85,3 +85,7 @@ window.retirar = function() {
 window.serviciosPublicos = function() {
   window.location.href = "serviciosPublicos.html"
 }
+
+window.extractoBancario = function() {
+  window.location.href = "extractoBancario.html"
+}
