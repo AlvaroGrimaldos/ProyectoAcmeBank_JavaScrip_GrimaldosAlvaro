@@ -89,3 +89,7 @@ window.serviciosPublicos = function() {
 window.extractoBancario = function() {
   window.location.href = "extractoBancario.html"
 }
+
+window.certificadoBancario = function() {
+  window.location.href = "certificadoBancario.html"
+}
