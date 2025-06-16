@@ -59,6 +59,7 @@ obtenerUsuarioPorDocumento(usuario.numeroDocumento);
 window.retirar = function() {
   const cantidadRetiro = document.getElementById("cantidadRetirar");
   const valorCantidadRetiro = cantidadRetiro.value;
+  const obligatorio = document.getElementById("obligatorio");
 
   if (!valorCantidadRetiro.trim()) {
     obligatorio.classList.replace('invisible', 'visible')
@@ -73,7 +74,6 @@ window.retirar = function() {
     const dbRef = ref(database);
 
     get(child(dbRef, `users/${userId}`)).then((snapshot) => {
-      let nuevoId = 1;
 
       if (snapshot.exists()) {
         const datosUsuarios = snapshot.val();

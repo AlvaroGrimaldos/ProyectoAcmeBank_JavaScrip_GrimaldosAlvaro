@@ -59,6 +59,7 @@ obtenerUsuarioPorDocumento(usuario.numeroDocumento);
 window.consignar = function() {
   const cantidadConsignacion = document.getElementById("cantidadConsignar");
   const valorCantidadConsignacion = cantidadConsignacion.value;
+  const obligatorio = document.getElementById("obligatorio")
 
   if (!valorCantidadConsignacion.trim()) {
     obligatorio.classList.replace('invisible', 'visible')

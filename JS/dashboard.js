@@ -81,3 +81,7 @@ window.consignar = function() {
 window.retirar = function() {
   window.location.href = "retirar.html"
 }
+
+window.serviciosPublicos = function() {
+  window.location.href = "serviciosPublicos.html"
+}

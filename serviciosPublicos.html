@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACME BANK | SERVICIOS PUBLICOS</title>
     <link rel="icon" type="image/pmg" href="media/Icon-ACME-BANK.jpg">
+    <link rel="stylesheet" href="Style/serviciosPublicos.css">
 </head>
 <body>
     <div class="header">
@@ -14,29 +15,32 @@
     </div>
     <div class="container">
         <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoConsignacion">
+            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoServiciosPublicos">
         </div>
         <div class="cuenta">
-            <h2 id="numeroDeCuenta"></h2>
+            <h2 id="numeroDeCuenta">243</h2>
         </div>
         <div class="persona">
-            <h2 id="nombre"></h2>
+            <h2 id="nombre">sdf</h2>
         </div>
         <div class="servicio">
             <input type="text" id="inputServicio" placeholder="Servicio a pagar" list="servicios" class="inputServiciosPublicos">
-            <datalist id="sservicios">
+            <datalist id="servicios">
                 <option value="Energia"></option>
                 <option value="Agua"></option>
                 <option value="Gas Natural"></option>
                 <option value="Internet"></option>
             </datalist>
         </div>
+        <br>
         <div class="referencia">
             <input type="text" id="inputReferencia" placeholder="Referencia del servicio" class="inputServiciosPublicos">
         </div>
+        <br>
         <div class="valor">
             <input type="number" id="inputValor" placeholder="Valor" class="inputServiciosPublicos">
         </div>
+        <br>
         <div class="footer">
             <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
             <button onclick="pagar()" id="buttonPagar">PAGAR</button>
@@ -84,5 +88,6 @@
         // console.log("Firebase Database inicializada y accesible en window.firebaseDatabase");
 
     </script> 
+    <script type="module" src="JS/serviciosPublicos.js" defer></script>
 </body>
 </html>
