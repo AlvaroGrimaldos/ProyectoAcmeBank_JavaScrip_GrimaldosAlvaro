@@ -57,3 +57,19 @@ th {
 td {
     border: 1px solid black;
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #container, #container * {
+        visibility: visible;
+    }
+
+    #container{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}

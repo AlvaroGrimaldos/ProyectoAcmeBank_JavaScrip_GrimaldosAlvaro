@@ -23,6 +23,11 @@ html {
     padding-top: 0.1%;
 }
 
+.footer {
+    width: 630px;
+    text-align: center;
+}
+
 .buttonTransacciones {
     background-color: black;
     color: white;
@@ -49,4 +54,20 @@ th {
 
 td {
     border: 1px solid black;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #container, #container * {
+        visibility: visible;
+    }
+
+    #container{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }

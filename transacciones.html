@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="Style/transacciones.css">
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <div class="logo">
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
     <div class="container" id="container">
         <h1>Historial de transacciones</h1>
-        <button class="buttonTransacciones">IMPRIMIR</button>
+        
+    </div>
+    <div class="footer">
+        <br>
+        <button class="buttonTransacciones" onclick="window.print()">IMPRIMIR</button>
         <br>
         <a href="dashboard.html" id="enlaceSalir">SALIR</a>
-        <br>
-        <br>
-        
     </div>
 
     <!-- Tu script de inicialización de Firebase -->

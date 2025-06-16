@@ -39,3 +39,19 @@ td {
 .tittle {
     line-height: 5px;
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #contenido, #contenido * {
+        visibility: visible;
+    }
+
+    #contenido {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
