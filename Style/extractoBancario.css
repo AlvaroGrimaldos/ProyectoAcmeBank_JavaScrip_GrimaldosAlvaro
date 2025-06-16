@@ -49,8 +49,9 @@ table {
     padding: 5px;
 }
 
-tr {
+th {
     border: 1px solid black;
+    background-color: aliceblue;
 }
 
 td {

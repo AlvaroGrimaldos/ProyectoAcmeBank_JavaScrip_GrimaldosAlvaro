@@ -13,14 +13,34 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">        
-        <input type="number" id="inputMes" class="inputExtractoBancario" placeholder="Ingrese el mes">
-        <input type="numer" id="inputAño" class="inputExtractoBancario" placeholder="Ingrese el año">
-        <button class="buttonExtractoBancario" onclick="generarExtracto()">Generar</button>
+    <div class="container" id="container">        
+        <input type="number" id="inputMes" class="inputExtractoBancario" placeholder="Ingrese el mes" list="meses">
+        <datalist id="meses">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+            <option value="11"></option>
+            <option value="12"></option>
+        </datalist>
+        <input type="number" id="inputAño" class="inputExtractoBancario" placeholder="Ingrese el año" list="años">
+        <datalist id="años">
+            <option value="2024"></option>
+            <option value="2025"></option>
+            <option value="2026"></option>
+        </datalist>
+        <button onclick="generarExtracto()" class="buttonExtractoBancario" >Generar</button>
         <button class="buttonExtractoBancario">Imprimir</button>
         <a href="dashboard.html" id="enlaceSalir">Salir</a>
         <br>
         <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+        <span class="invisible" id="noHay">*No hay transacciones*</span>
 
         <h1>Extracto bancario</h1>
         <h2 id="numeroCuenta"></h2>

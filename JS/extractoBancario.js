@@ -77,29 +77,68 @@ tabla.appendChild(body);
 
 contenedor.appendChild(tabla);
 
-window.generarExtracto = function () {
-    const mes = document.getElementById("inputMes");
-    const valorMes = mes.value;
-    const año = document.getElementById("inputAño");
-    const valorAño = año.value;
 
-    if (!valorMes.trim() || !valorAño.trim()) {
-        obligatorio.classList.replace('invisible', 'visible')
-        return false;
-    }else {
-        obligatorio.classList.replace('visible', 'invisible');
+window.generarExtracto = function(){
+  const mes = document.getElementById("inputMes");
+  const valorMes = mes.value;
+  const año = document.getElementById("inputAño");
+  const valorAño = año.value;
 
-        const app = window.firebaseApp;
-        const database = getDatabase(app);
-        const userId = localStorage.getItem('userId');
-        const dbRef = ref(database);
+  if (!valorMes.trim() || !valorAño.trim()) {
+    obligatorio.classList.replace('invisible', 'visible')
+    return false;
+  }else {
+    obligatorio.classList.replace('visible', 'invisible');
 
-        get(child(dbRef, `users/${userId}/transferencias`)).then((snapshot) => {
+    const app = window.firebaseApp;
+    const database = getDatabase(app);
+    const userId = localStorage.getItem('userId');
+    const dbRef = ref(database);
+    
 
-            if (snapshot.exists()) {
-                const datosTransferencia = snapshot.val();
-                console.log(datosTransferencia)
-            }
+    get(child(dbRef, `users/${userId}/transferencias`)).then((snapshot) => {
+
+      if (snapshot.exists()) {
+        const transferencias = snapshot.val();
+        body.innerHTML = "";
+
+        Object.entries(transferencias).forEach(([id, transaccion]) => {
+          const [dia,mesTransferencia, añoTransferencia] = transaccion.fecha.split("/");
+
+          if(mesTransferencia === valorMes && añoTransferencia === valorAño) {
+            const fila = document.createElement("tr");
+
+            const fecha = document.createElement("td");
+            fecha.textContent = transaccion.fecha;
+
+            const referencia = document.createElement("td");
+            referencia.textContent = transaccion.referencia;
+
+            const tipo = document.createElement("td");
+            tipo.textContent = transaccion.tipo_transaccion;
+
+            const descripcion = document.createElement("td");
+            descripcion.textContent = transaccion.descripcion;
+
+            const valor = document.createElement("td");
+            valor.textContent = transaccion.valor;
+
+            fila.appendChild(fecha);
+            fila.appendChild(referencia);
+            fila.appendChild(tipo);
+            fila.appendChild(descripcion);
+            fila.appendChild(valor);
+
+            body.appendChild(fila);
+          }else {
+            console.log("No hay transferencias registradas")
+            const nohay = document.getElementById("noHay")
+            nohay.classList.replace('invisible', 'visible')
+          }
+        }).catch((error) => {
+          console.error("Error al obtener transferencias:", error);
         })
-    }
+      }
+    })
+  }
 }
