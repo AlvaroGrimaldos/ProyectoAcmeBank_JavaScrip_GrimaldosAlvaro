@@ -30,6 +30,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const ciudad = usuarioEncontrado.ciudad;
             const correo = usuarioEncontrado.correo_electronico;
             const nombre = usuarioEncontrado.nombres;
+            const apellido = usuarioEncontrado.apellidos;
             const telefono = usuarioEncontrado.telefono;
             const numeroCuenta = usuarioEncontrado.numero_cuenta;
             const numeroSaldo = usuarioEncontrado.saldo;
@@ -47,7 +48,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             
             ciudadCer.textContent = ciudad;
             fechaCer.textContent = fechaCert;
-            nombreCer.textContent = nombre;
+            nombreCer.textContent = nombre + " " + apellido;
             tipoDocumentoCer.textContent = tipoDocumento;
             numeroDocumentoCer.textContent = numeroDocumento;
             numeroCuentaTabla.textContent = numeroCuenta;

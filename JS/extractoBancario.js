@@ -30,6 +30,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             const ciudad = usuarioEncontrado.ciudad;
             const correo = usuarioEncontrado.correo_electronico;
             const nombre = usuarioEncontrado.nombres;
+            const apellido = usuarioEncontrado.apellidos;
             const telefono = usuarioEncontrado.telefono;
             const numeroCuenta = usuarioEncontrado.numero_cuenta;
             const numeroSaldo = usuarioEncontrado.saldo;
@@ -38,7 +39,7 @@ async function obtenerUsuarioPorDocumento(numeroBuscado) {
             localStorage.setItem('saldo', numeroSaldo);
 
             cuenta.textContent = numeroCuenta;
-            nombreint.textContent = nombre;
+            nombreint.textContent = nombre + " " + apellido;
     
             // return usuarioEncontrado;
           } else {

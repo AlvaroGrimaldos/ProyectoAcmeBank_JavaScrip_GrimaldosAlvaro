@@ -46,6 +46,10 @@ td {
     line-height: 5px;
 }
 
+.footer {
+    text-align: center;
+}
+
 @media print {
     body * {
         visibility: hidden;
