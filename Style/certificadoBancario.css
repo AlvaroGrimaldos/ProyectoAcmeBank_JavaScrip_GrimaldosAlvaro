@@ -1,11 +1,73 @@
 html {
-    font-family: Arial;
-    padding: 25px;
-    padding-left: 90px;
+    font-family: 'Arial', sans-serif;
+    padding: 40px 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 750px;
+    width: 90%;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-bottom: 20px;
 }
 
 #imgHeader {
     height: 40px;
+}
+
+.tittle h1:first-child {
+    font-weight: bold;
+    margin: 0;
+}
+
+.tittle h1:last-child {
+    font-weight: normal;
+    margin: 5px 0 20px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+    background-color: #d9d9d9;
+}
+
+th {
+    background-color: #c0c0c0;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    color: #000;
+}
+
+td {
+    padding: 10px 12px;
+    border-top: 1px solid #aaa;
+    background-color: #eee;
+    color: #333;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .buttonCertificadoBancario {
@@ -17,37 +79,22 @@ html {
     font-weight: bold;
     font-size: 15px;
     border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-table {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-th {
-    border: 1px solid black;
-    background-color: aliceblue;
-}
-
-td {
-    border: 1px solid black;
+.buttonCertificadoBancario:hover {
+    background-color: #333;
 }
 
 #enlaceSalir {
     color: black;
+    font-size: 14px;
     text-decoration: none;
 }
 
 #enlaceSalir:hover {
     text-decoration: underline;
-}
-
-.tittle {
-    line-height: 5px;
-}
-
-.footer {
-    text-align: center;
 }
 
 @media print {
