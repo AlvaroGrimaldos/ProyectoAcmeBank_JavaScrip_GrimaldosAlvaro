@@ -26,6 +26,7 @@ html {
     padding-right: 2%;
     border-radius: 40px;
     /* line-height: 8px; */
+    float: left;
 }
 
 .inputServiciosPublicos {
@@ -36,7 +37,7 @@ html {
     width: 200px;
 }
 
-#buttonPagar {
+.buttonPagar {
     background-color: black;
     color: white;
     border: none;
@@ -66,4 +67,35 @@ input::placeholder {
 
 .invisible {
     font-size: 0px;
+}
+
+.facturaVisible {
+    background-color: #D9D9D9;
+    width: 300px;
+    height: 360px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 40px;
+    padding-top: 1%;
+    float: right;
+}
+
+.facturaInvisible {
+    visibility: hidden;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #contenido, #contenido * {
+        visibility: visible;
+    }
+
+    #contenido {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }

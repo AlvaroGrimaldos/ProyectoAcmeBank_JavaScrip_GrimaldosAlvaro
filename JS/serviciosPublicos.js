@@ -84,15 +84,17 @@ window.pagar = function() {
             const cantidad = parseInt(valorValor);
             const saldo = parseInt(saldoActual);
             const nuevoSaldo = saldo - cantidad;
+            const fecha = new Date().toLocaleDateString();
+            const referencia = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
         
             const referenciaTransaccion = push(ref(database, `users/${userId}/transferencias`));
 
             set(referenciaTransaccion, {
                 valor: valorValor,
-                fecha: new Date().toLocaleDateString(),
-                referencia: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+                fecha: fecha,
+                referencia: referencia,
                 tipo_transaccion: "Retiro",
-                descripcion: `Pago de servicio publico ${valorServicio}`,
+                descripcion: `Pago de servicio publico: ${valorServicio}`,
             })
 
             .then(() => {
@@ -104,7 +106,19 @@ window.pagar = function() {
             })
             .then(() => {
                 console.log(`Pago exitoso. Nuevo saldo: ${nuevoSaldo}`);
-                window.location.href = "dashboard.html";
+                const ref = document.getElementById("ref");
+                const date = document.getElementById("date");
+                const price = document.getElementById("price");
+                const tipo = document.getElementById("tipo");
+                const desc = document.getElementById("desc");
+                const factura = document.getElementById("contenido")
+                factura.classList.replace('facturaInvisible', 'facturaVisible')
+
+                ref.textContent = referencia;
+                date.textContent = fecha;
+                price.textContent = valorValor;
+                tipo.textContent = "Retiro";
+                desc.textContent = `Pago de servicio publico: ${valorServicio}`;
             })
             .catch((error) => {
                 console.error("Error al pagar:", error);
