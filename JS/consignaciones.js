@@ -82,13 +82,15 @@ window.consignar = function() {
         const cantidad = parseInt(valorCantidadConsignacion);
         const saldo = parseInt(saldoActual);
         const nuevoSaldo = saldo + cantidad;
+        const referencia = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+        const fecha = new Date().toLocaleDateString();
       
         const referenciaTransaccion = push(ref(database, `users/${userId}/transferencias`));
 
         set(referenciaTransaccion, {
           valor: valorCantidadConsignacion,
-          fecha: new Date().toLocaleDateString(),
-          referencia: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+          fecha: fecha,
+          referencia: referencia,
           tipo_transaccion: "Consignacion",
           descripcion: "Consignacion por canal electronico",
         })
@@ -102,7 +104,19 @@ window.consignar = function() {
         })
         .then(() => {
           console.log(`Consignacion exitosa. Nuevo saldo: ${nuevoSaldo}`);
-          window.location.href = "dashboard.html";
+          const ref = document.getElementById("ref");
+          const date = document.getElementById("date");
+          const price = document.getElementById("price");
+          const tipo = document.getElementById("tipo");
+          const desc = document.getElementById("desc");
+          const factura = document.getElementById("contenido")
+          factura.classList.replace('facturaInvisible', 'facturaVisible')
+
+          ref.textContent = referencia;
+          date.textContent = fecha;
+          price.textContent = valorCantidadConsignacion;
+          tipo.textContent = "Consignacion";
+          desc.textContent = "Consignacion por canal electronico"
         })
         .catch((error) => {
           console.error("Error al consignar:", error);

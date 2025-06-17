@@ -29,11 +29,20 @@
         <br>
         <div class="footer">
             <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-            <button id="buttonConsignar" onclick="consignar()">CONSIGNAR</button>
+            <button class="buttonConsignar" onclick="consignar()">CONSIGNAR</button>
             <br>
             <a href="dashboard.html" id="enlaceCancelar">SALIR</a>
         </div>
     </div>
+    <div class="facturaInvisible" id="contenido">
+        <h2 id="ref"></h2>
+        <h2 id="date"></h2>
+        <h2 id="price"></h2>
+        <h2 id="tipo"></h2>
+        <h2 id="desc"></h2>
+        <button onclick="window.print()" class="buttonConsignar">Imprimir</button>
+    </div>
+    
 
     <!-- Tu script de inicialización de Firebase -->
     <script type="module" defer>
