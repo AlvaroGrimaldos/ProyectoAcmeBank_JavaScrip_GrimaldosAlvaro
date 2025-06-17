@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME BANK | CERTIFICADO BANCARIO</title>
+    <link rel="icon" type="image/png" href="media/Icon-ACME-BANK.jpg">
+    <link rel="stylesheet" href="Style/certificadoBancario.css">
+    <link rel="stylesheet" href="Style/responsive.css">
+</head>
+<body>
+    <div class="container" id="contenido">
+        <div class="logo">
+            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
+        </div>
+        <div class="tittle">
+            <h1><strong>Certificacion</strong></h1>
+            <h1>Bancaria</h1>
+        </div>
+        <br>
+        <p><span id="spanCiudad"></span>,<span id="spanFecha"></span></p>
+        <br><br>
+        <p>Señor</p>
+        <p>A quien pueda interesar</p>
+        <br>
+        <p>ACME BANK S.A se permite informar que <span id="nombre"></span> identificado(a) con <span id="tipoDocumento"></span> No. <span id="numeroDocumento"></span> a la fecha de expedicion de esta certificacion, tiene con el Banco los siguientes productos:</p>
+        <table>
+            <thead>
+                <th>Nombre Producto</th>
+                <th>Numero Producto</th>
+                <th>Fecha Apertura</th>
+                <th>Estado</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CUENTA AHORROS</td>
+                    <td id="numeroCuentaTabla"></td>
+                    <td id="fechaApertura"></td>
+                    <td>ACTIVA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <br>
+        <button class="buttonCertificadoBancario" onclick="window.print()">IMPRIMIR</button>
+        <br>
+        <a href="dashboard.html" id="enlaceSalir">SALIR</a>
+    </div>
+
+    <script type="module" src="JS/database.js" defer></script>
+    <script type="module" src="JS/certificadoBancario.js" defer></script>
+</body>
+</html>

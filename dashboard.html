@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME BANK | DASHBOARD</title>
+    <link rel="icon" type="image/png" href="media/Icon-ACME-BANK.jpg">
+    <link rel="stylesheet" href="Style/dashboard.css">
+    <link rel="stylesheet" href="Style/responsive.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
+        </div>
+    </div>
+    <div class="centrarPantalla">
+        <div class="column">
+            <div class="containerBienvenida">
+                <h2 id="Saludo"></h2>
+                <a href="index.html" id="cerrarSesion">🔓 Cerrar sesion</a>
+                <br>
+                <br>
+                <a href="validarCambiarContraseña.html" id="cambiarContraseña">👤 Cambiar contraseña</a>
+                <br>
+                <br>
+                <a href="" id="ayuda">❓ Ayuda</a>
+            </div>
+            <div class="containerTarjeta">
+                <p id="textoNumeroCuenta">Numero de cuenta</p>
+                <h1 id="numeroCuenta"></h1>
+                <br>
+                <p id="textoSaldoCuenta">Saldo disponible</p>
+                <h2 id="numeroSaldo"></h2>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="containerDatos">
+                <p id="TextoCiudad">Ciudad</p>
+                <h2 id="ciudad"></h2>
+                <br>
+                <p id="textoCorreo">Correo</p>
+                <h2 id="correo"></h2>
+                <br>
+                <p id="textoTelefono">Telefono</p>
+                <h2 id="telefono"></h2>
+                <br>
+                <p id="textoFechaCreacion">Fecha de creacion</p>
+                <h2 id="fechaCreacion"></h2>
+            </div>
+            <div class="containerMenu">
+                <div class="menuGrid">
+                    <button onclick="transacciones()" id="buttonTransacciones" class="buttonMenu">📄<br><small>Historial</small></button>
+                    <button onclick="consignar()" id="buttonConsignar" class="buttonMenu">✉️<br> <small>Consignar</small></button>
+                    <button onclick="retirar()" id="buttonRetirar" class="buttonMenu">💸<br><small>Retirar</small> </button>
+                    <button onclick="serviciosPublicos()" id="buttonServiciosPublicos" class="buttonMenu">💡<br> <small>Servicios Publicos</small></button>
+                    <br>
+                    <button onclick="extractoBancario()" id="buttonExtractoBancario" class="buttonMenu">📈<br> <small>Extracto Bancario</small></button>
+                    <button onclick="certificadoBancario()" id="buttonCertificadoBancario" class="buttonMenu">📃<br><small>Certificado Bancario</small></button>
+                </div>
+        </div>
+        </div>
+    </div>
+    
+    <script type="module" src="JS/database.js" defer></script>
+    <script type="module" src="JS/dashboard.js" defer></script>
+</body>
+</html>

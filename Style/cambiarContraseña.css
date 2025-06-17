@@ -17,31 +17,31 @@ html {
     margin-top: 1%;
 }
 
-#imgBancoInicioSesion {
+.banco {
+    text-align: left;
+}
+
+#imgCambioContraseña {
     height: 40px;
     padding-left: 20px;
     padding-top: 15px;
-}
-.banco {
-    text-align: left;
 }
 
 .container {
     background-color: #D9D9D9;
     width: 250px;
-    height: 350px;
+    height: 200px;
     /* padding: 2%; */
     text-align: center;
-    border-radius: 40px;
-    
+    border-radius: 40px;  
 }
 
-.inputInicioSesion {
+.inputCambiarContraseña {
     background-color: #2980B9;
     color: white;
     border: none;
-    border-radius: 4px;
     height: 40px;
+    border-radius: 4px;
     width: 200px;
 }
 
@@ -50,33 +50,23 @@ input::placeholder {
     font-weight: bold;
 }
 
-#enlaceOlvidarContraseña {
-    font-size: 10px;
-    color: black;
-}
-
-.olvidarContraseña {
-    text-align: right;
-    padding-right: 25px;
-}
-
-#buttonIniciarSesion {
+#buttonCambiar {
     background-color: black;
     color: white;
     border: none;
+    border-radius: 4px;
     height: 40px;
     width: 170px;
     font-weight: bold;
-    border-radius: 4px;
     font-size: 15px;
 }
 
-#enlaceRegistrarse {
+#enlaceCancelar{
     color: black;
     text-decoration: none;
 }
 
-#enlaceRegistrarse:hover {
+#enlaceCancelar:hover {
     text-decoration: underline;
 }
 

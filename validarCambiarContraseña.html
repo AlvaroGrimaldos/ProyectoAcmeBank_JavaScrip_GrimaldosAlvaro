@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACME BANK | INICIO SESION</title>
+    <title>ACME BANK | CAMBIAR CONTRASEÑA</title>
     <link rel="icon" type="image/png" href="media/Icon-ACME-BANK.jpg">
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/validarCambiarContraseña.css">
     <link rel="stylesheet" href="Style/responsive.css">
 </head>
 <body>
-    <div class="header"> 
+    <div class="header">
         <div class="logo">
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
@@ -17,10 +17,10 @@
     <div class="centrarPantalla">
         <div class="container">
             <div class="banco">
-                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoInicioSesion">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgCambioContraseña">
             </div>
             <div class="tipoDocumento">
-                <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputInicioSesion">
+                <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputCambioContraseña">
                 <datalist id="documentos">
                     <option value="Cedula Ciudadania"></option>
                     <option value="Pasaporte"></option>
@@ -29,26 +29,23 @@
             </div>
             <br>
             <div class="numeroDocumento">
-                <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputInicioSesion">
+                <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputCambioContraseña">
             </div>
             <br>
-            <div class="contraseña">
-                <input type="password" id="inputContraseña" placeholder="Contraseña" class="inputInicioSesion">
-            </div>
-            <div class="olvidarContraseña">
-                <a href="validarCambiarContraseña.html" id="enlaceOlvidarContraseña">Olvidaste tu contraseña?</a>
+            <div class="correo">
+                <input type="email" id="inputCorreo" placeholder="Correo electronico" class="inputCambioContraseña">
             </div>
             <br>
             <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
-            <span class="invisible" id="invalido">*Documento o contraseña invalidos*</span>
+            <span class="invisible" id="invalido">*Documento o correo invalidos*</span>
             <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-            <button onclick="iniciarSesion()" id="buttonIniciarSesion">INICIAR SESION</button>
+            <button onclick="verificar()" id="buttonVerificar">VERIFICAR</button>
             <br>
-            <a href="registro.html" id="enlaceRegistrarse">REGISTRARSE</a>
+            <a href="index.html" id="enlaceVerificar">SALIR</a>
         </div>
     </div>
-    
+
     <script type="module" src="JS/database.js" defer></script>
-    <script src="JS/main.js" type="module" defer></script>
+    <script src="JS/validarCambiarContraseña.js" type="module"></script>
 </body>
 </html>

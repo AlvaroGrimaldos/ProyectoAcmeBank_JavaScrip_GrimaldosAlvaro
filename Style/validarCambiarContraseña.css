@@ -17,13 +17,14 @@ html {
     margin-top: 1%;
 }
 
-#imgBancoInicioSesion {
+.banco {
+    text-align: left;
+}
+
+#imgCambioContraseña {
     height: 40px;
     padding-left: 20px;
     padding-top: 15px;
-}
-.banco {
-    text-align: left;
 }
 
 .container {
@@ -32,11 +33,10 @@ html {
     height: 350px;
     /* padding: 2%; */
     text-align: center;
-    border-radius: 40px;
-    
+    border-radius: 40px;  
 }
 
-.inputInicioSesion {
+.inputCambioContraseña {
     background-color: #2980B9;
     color: white;
     border: none;
@@ -50,34 +50,20 @@ input::placeholder {
     font-weight: bold;
 }
 
-#enlaceOlvidarContraseña {
-    font-size: 10px;
-    color: black;
-}
-
-.olvidarContraseña {
-    text-align: right;
-    padding-right: 25px;
-}
-
-#buttonIniciarSesion {
+#buttonVerificar {
     background-color: black;
     color: white;
     border: none;
     height: 40px;
     width: 170px;
-    font-weight: bold;
     border-radius: 4px;
+    font-weight: bold;
     font-size: 15px;
 }
 
-#enlaceRegistrarse {
+#enlaceVerificar{
     color: black;
     text-decoration: none;
-}
-
-#enlaceRegistrarse:hover {
-    text-decoration: underline;
 }
 
 .visible {
