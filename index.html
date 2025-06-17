@@ -13,36 +13,38 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">
-        <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoInicioSesion">
+    <div class="centrarPantalla">
+        <div class="container">
+            <div class="banco">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoInicioSesion">
+            </div>
+            <div class="tipoDocumento">
+                <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputInicioSesion">
+                <datalist id="documentos">
+                    <option value="Cedula Ciudadania"></option>
+                    <option value="Pasaporte"></option>
+                    <option value="Cedula Extranjeria"></option>
+                </datalist>
+            </div>
+            <br>
+            <div class="numeroDocumento">
+                <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputInicioSesion">
+            </div>
+            <br>
+            <div class="contraseña">
+                <input type="password" id="inputContraseña" placeholder="Contraseña" class="inputInicioSesion">
+            </div>
+            <div class="olvidarContraseña">
+                <a href="validarCambiarContraseña.html" id="enlaceOlvidarContraseña">Olvidaste tu contraseña?</a>
+            </div>
+            <br>
+            <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
+            <span class="invisible" id="invalido">*Documento o contraseña invalidos*</span>
+            <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+            <button onclick="iniciarSesion()" id="buttonIniciarSesion">INICIAR SESION</button>
+            <br>
+            <a href="registro.html" id="enlaceRegistrarse">REGISTRARSE</a>
         </div>
-        <div class="tipoDocumento">
-            <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputInicioSesion">
-            <datalist id="documentos">
-                <option value="Cedula Ciudadania"></option>
-                <option value="Pasaporte"></option>
-                <option value="Cedula Extranjeria"></option>
-            </datalist>
-        </div>
-        <br>
-        <div class="numeroDocumento">
-            <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputInicioSesion">
-        </div>
-        <br>
-        <div class="contraseña">
-            <input type="password" id="inputContraseña" placeholder="Contraseña" class="inputInicioSesion">
-        </div>
-        <div class="olvidarContraseña">
-            <a href="validarCambiarContraseña.html" id="enlaceOlvidarContraseña">Olvidaste tu contraseña?</a>
-        </div>
-        <br>
-        <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
-        <span class="invisible" id="invalido">*Documento o contraseña invalidos*</span>
-        <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-        <button onclick="iniciarSesion()" id="buttonIniciarSesion">INICIAR SESION</button>
-        <br>
-        <a href="registro.html" id="enlaceRegistrarse">REGISTRARSE</a>
     </div>
     
      <!-- Tu script de inicialización de Firebase -->

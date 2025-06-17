@@ -1,11 +1,20 @@
 html {
     font-family: Arial;
-    padding: 25px;
-    padding-left: 90px;
+    padding: 0;
+    padding-left: 0;
+}
+
+.centrarPantalla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 
 #imgHeader {
     height: 40px;
+    margin-left: 5%;
+    margin-top: 1%;
 }
 
 .banco {

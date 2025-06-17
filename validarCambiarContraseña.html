@@ -13,33 +13,35 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">
-        <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgCambioContraseña">
+    <div class="centrarPantalla">
+        <div class="container">
+            <div class="banco">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgCambioContraseña">
+            </div>
+            <div class="tipoDocumento">
+                <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputCambioContraseña">
+                <datalist id="documentos">
+                    <option value="Cedula Ciudadania"></option>
+                    <option value="Pasaporte"></option>
+                    <option value="Cedula Extranjeria"></option>
+                </datalist>
+            </div>
+            <br>
+            <div class="numeroDocumento">
+                <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputCambioContraseña">
+            </div>
+            <br>
+            <div class="correo">
+                <input type="email" id="inputCorreo" placeholder="Correo electronico" class="inputCambioContraseña">
+            </div>
+            <br>
+            <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
+            <span class="invisible" id="invalido">*Documento o correo invalidos*</span>
+            <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+            <button onclick="verificar()" id="buttonVerificar">VERIFICAR</button>
+            <br>
+            <a href="index.html" id="enlaceVerificar">SALIR</a>
         </div>
-        <div class="tipoDocumento">
-            <input type="text" id="documento" placeholder="Tipo de documento" list="documentos" class="inputCambioContraseña">
-            <datalist id="documentos">
-                <option value="Cedula Ciudadania"></option>
-                <option value="Pasaporte"></option>
-                <option value="Cedula Extranjeria"></option>
-            </datalist>
-        </div>
-        <br>
-        <div class="numeroDocumento">
-            <input type="number" id="inputNumeroDocumento" placeholder="Numero de documento" class="inputCambioContraseña">
-        </div>
-        <br>
-        <div class="correo">
-            <input type="email" id="inputCorreo" placeholder="Correo electronico" class="inputCambioContraseña">
-        </div>
-        <br>
-        <span class="invisible" id="noUser">*No hay usuarios registrados*</span>
-        <span class="invisible" id="invalido">*Documento o correo invalidos*</span>
-        <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-        <button onclick="verificar()" id="buttonVerificar">VERIFICAR</button>
-        <br>
-        <a href="index.html" id="enlaceVerificar">SALIR</a>
     </div>
 
     <!-- Tu script de inicialización de Firebase -->

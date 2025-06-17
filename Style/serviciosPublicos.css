@@ -4,6 +4,14 @@ html {
     padding-left: 90px;
 }
 
+.centrarPantalla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 20px;
+}
+
 #imgHeader {
     height: 40px;
 }

@@ -13,19 +13,21 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">
-        <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgCambioContraseña">
+    <div class="centrarPantalla">
+        <div class="container">
+            <div class="banco">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgCambioContraseña">
+            </div>
+            <div class="contraseñaNueva">
+                <input type="password" id="inputContraseña" placeholder="Contraseña nueva" class="inputCambiarContraseña">
+            </div>
+            <br>
+            <span class="invisible" id="exito">*Contraseña cambiada*</span>
+            <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+            <button onclick="cambiarContraseña()" id="buttonCambiar">CAMBIAR CONTRASEÑA</button>
+            <br>
+            <a href="index.html" id="enlaceCancelar">SALIR</a>
         </div>
-        <div class="contraseñaNueva">
-            <input type="password" id="inputContraseña" placeholder="Contraseña nueva" class="inputCambiarContraseña">
-        </div>
-        <br>
-        <span class="invisible" id="exito">*Contraseña cambiada*</span>
-        <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-        <button onclick="cambiarContraseña()" id="buttonCambiar">CAMBIAR CONTRASEÑA</button>
-        <br>
-        <a href="index.html" id="enlaceCancelar">SALIR</a>
     </div>
 
     <!-- Tu script de inicialización de Firebase -->

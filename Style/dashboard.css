@@ -6,6 +6,14 @@ html {
     gap: 30px;
 }
 
+.centrarPantalla {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 80vh;
+}
 .header {
     width: 100%;
 }

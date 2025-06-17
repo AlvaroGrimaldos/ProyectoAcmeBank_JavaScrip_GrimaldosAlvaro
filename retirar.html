@@ -13,35 +13,37 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">
-        <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoRetiro">
-        </div>
-        <div class="cuenta">
-            <h2 id="numeroDeCuenta"></h2>
-        </div>
-        <div class="persona">
-            <h2 id="nombre"></h2>
-        </div>
-        <div class="consignacion">
-            <input type="number" id="cantidadRetirar" class="inputRetiro" placeholder="Cantidad a retirar">
-        </div>
-        <br>
-        <div class="footer">
-            <span class="invisible" id="crucial">*Saldo insuficiente*</span><br>
-            <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-            <button class="buttonRetirar" onclick="retirar()">RETIRAR</button>
+    <div class="centrarPantalla">
+        <div class="container">
+            <div class="banco">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoRetiro">
+            </div>
+            <div class="cuenta">
+                <h2 id="numeroDeCuenta"></h2>
+            </div>
+            <div class="persona">
+                <h2 id="nombre"></h2>
+            </div>
+            <div class="consignacion">
+                <input type="number" id="cantidadRetirar" class="inputRetiro" placeholder="Cantidad a retirar">
+            </div>
             <br>
-            <a href="dashboard.html" id="enlaceCancelar">SALIR</a>
+            <div class="footer">
+                <span class="invisible" id="crucial">*Saldo insuficiente*</span><br>
+                <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+                <button class="buttonRetirar" onclick="retirar()">RETIRAR</button>
+                <br>
+                <a href="dashboard.html" id="enlaceCancelar">SALIR</a>
+            </div>
         </div>
-    </div>
-    <div class="facturaInvisible" id="contenido">
-        <h2 id="ref"></h2>
-        <h2 id="date"></h2>
-        <h2 id="price"></h2>
-        <h2 id="tipo"></h2>
-        <h2 id="desc"></h2>
-        <button onclick="window.print()" class="buttonRetirar">Imprimir</button>
+        <div class="facturaInvisible" id="contenido">
+            <h2 id="ref"></h2>
+            <h2 id="date"></h2>
+            <h2 id="price"></h2>
+            <h2 id="tipo"></h2>
+            <h2 id="desc"></h2>
+            <button onclick="window.print()" class="buttonRetirar">Imprimir</button>
+        </div>
     </div>
 
     <!-- Tu script de inicialización de Firebase -->

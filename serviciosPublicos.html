@@ -13,49 +13,51 @@
             <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgHeader">
         </div>
     </div>
-    <div class="container">
-        <div class="banco">
-            <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoServiciosPublicos">
-        </div>
-        <div class="cuenta">
-            <h2 id="numeroDeCuenta"></h2>
-        </div>
-        <div class="persona">
-            <h2 id="nombre"></h2>
-        </div>
-        <div class="servicio">
-            <input type="text" id="inputServicio" placeholder="Servicio a pagar" list="servicios" class="inputServiciosPublicos">
-            <datalist id="servicios">
-                <option value="Energia"></option>
-                <option value="Agua"></option>
-                <option value="Gas Natural"></option>
-                <option value="Internet"></option>
-            </datalist>
-        </div>
-        <br>
-        <div class="referencia">
-            <input type="text" id="inputReferencia" placeholder="Referencia del servicio" class="inputServiciosPublicos">
-        </div>
-        <br>
-        <div class="valor">
-            <input type="number" id="inputValor" placeholder="Valor" class="inputServiciosPublicos">
-        </div>
-        <br>
-        <div class="footer">
-            <span class="invisible" id="crucial">*Saldo insuficiente*</span><br>
-            <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
-            <button onclick="pagar()" class="buttonPagar">PAGAR</button>
+    <div class="centrarPantalla">
+        <div class="container">
+            <div class="banco">
+                <img src="media/acme_no_bg.png" alt="AcmeBank" id="imgBancoServiciosPublicos">
+            </div>
+            <div class="cuenta">
+                <h2 id="numeroDeCuenta"></h2>
+            </div>
+            <div class="persona">
+                <h2 id="nombre"></h2>
+            </div>
+            <div class="servicio">
+                <input type="text" id="inputServicio" placeholder="Servicio a pagar" list="servicios" class="inputServiciosPublicos">
+                <datalist id="servicios">
+                    <option value="Energia"></option>
+                    <option value="Agua"></option>
+                    <option value="Gas Natural"></option>
+                    <option value="Internet"></option>
+                </datalist>
+            </div>
             <br>
-            <a href="dashboard.html" id="enlaceCancelar">SALIR</a>
+            <div class="referencia">
+                <input type="text" id="inputReferencia" placeholder="Referencia del servicio" class="inputServiciosPublicos">
+            </div>
+            <br>
+            <div class="valor">
+                <input type="number" id="inputValor" placeholder="Valor" class="inputServiciosPublicos">
+            </div>
+            <br>
+            <div class="footer">
+                <span class="invisible" id="crucial">*Saldo insuficiente*</span><br>
+                <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
+                <button onclick="pagar()" class="buttonPagar">PAGAR</button>
+                <br>
+                <a href="dashboard.html" id="enlaceCancelar">SALIR</a>
+            </div>
         </div>
-    </div>
-    <div class="facturaInvisible" id="contenido">
-        <h2 id="ref"></h2>
-        <h2 id="date"></h2>
-        <h2 id="price"></h2>
-        <h2 id="tipo"></h2>
-        <h2 id="desc"></h2>
-        <button onclick="window.print()" class="buttonPagar">Imprimir</button>
+        <div class="facturaInvisible" id="contenido">
+            <h2 id="ref"></h2>
+            <h2 id="date"></h2>
+            <h2 id="price"></h2>
+            <h2 id="tipo"></h2>
+            <h2 id="desc"></h2>
+            <button onclick="window.print()" class="buttonPagar">Imprimir</button>
+        </div>
     </div>
         
     <!-- Tu script de inicialización de Firebase -->
