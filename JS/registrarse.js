@@ -23,9 +23,14 @@ window.crearCuenta = function() {
   const contraseña = document.getElementById("inputContraseña");
   const valorContraseña = contraseña.value;
   const obligatorio = document.getElementById("obligatorio");
+  const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const crucial = document.getElementById("crucial")
 
   if (!valorTipoDocumento.trim() || !valorNumeroDocumento.trim() || !valorContraseña.trim() || !valorNombres.trim() || !valorApellidos.trim() || !valorGenero.trim() || !valorTelefono.trim() || !valorCorreo.trim() || !valorCiudad.trim() || !valorDireccion.trim()) {
     obligatorio.classList.replace('invisible', 'visible')
+    return false;
+  }else if(!formatoCorreo.test(valorCorreo)){
+    crucial.classList.replace('invisible', 'visible')
     return false;
   }else {
     obligatorio.classList.replace('visible', 'invisible');
@@ -81,6 +86,4 @@ window.crearCuenta = function() {
     });
     
   }
-  
-  
 }
