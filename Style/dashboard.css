@@ -101,4 +101,13 @@ a {
   padding-top: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    #numeroCuenta {
+        font-size: 24px;
+    }
+    #correo {
+        font-size: 22px;
+    }
+}
+
 
