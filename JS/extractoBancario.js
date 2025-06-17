@@ -95,11 +95,13 @@ window.generarExtracto = function(){
     const database = getDatabase(app);
     const userId = localStorage.getItem('userId');
     const dbRef = ref(database);
+    const nohay = document.getElementById("noHay")
     
 
     get(child(dbRef, `users/${userId}/transferencias`)).then((snapshot) => {
 
       if (snapshot.exists()) {
+        nohay.classList.replace('visible', 'invisible')
         const transferencias = snapshot.val();
         body.innerHTML = "";
 
@@ -133,7 +135,6 @@ window.generarExtracto = function(){
             body.appendChild(fila);
           }else {
             console.log("No hay transferencias registradas")
-            const nohay = document.getElementById("noHay")
             nohay.classList.replace('invisible', 'visible')
           }
         }).catch((error) => {
