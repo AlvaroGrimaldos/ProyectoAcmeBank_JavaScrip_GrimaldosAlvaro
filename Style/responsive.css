@@ -1,0 +1,64 @@
+@media screen and (max-width: 768px) {
+    html {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .centrarPantalla {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .container,
+    .containerBienvenida,
+    .containerTarjeta,
+    .containerDatos,
+    .containerMenu,
+    .facturaVisible,
+    .facturaInvisible {
+        width: 90% !important;
+        height: auto !important;
+        padding: 5% !important;
+        margin: 10px 0;
+        float: none;
+    }
+
+    .column {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .buttonMenu,
+    .buttonRetirar,
+    .buttonPagar,
+    .buttonConsignar,
+    .buttonExtractoBancario,
+    .buttonCertificadoBancario,
+    .buttonTransacciones {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    .inputRetiro,
+    .inputServiciosPublicos,
+    .inputConsignacion,
+    .inputExtractoBancario,
+    .inputCambiarContraseña {
+        width: 90%;
+    }
+}
