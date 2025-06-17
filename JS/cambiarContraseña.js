@@ -1,5 +1,14 @@
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
+async function encriptarContraseña(texto) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(texto);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+}
+
 window.cambiarContraseña = async function() {
     const contraseña = document.getElementById("inputContraseña");
     const valorContraseña = contraseña.value;
@@ -31,10 +40,13 @@ window.cambiarContraseña = async function() {
             });
             if (userId) {
                 const userRef = ref(database, `users/${userId}`);
-                await set(userRef, {
+                encriptarContraseña(valorContraseña).then(hash => {
+                    set(userRef, {
                     ...snapshot.val()[userId],
-                    contraseña: valorContraseña
-                });
+                    contraseña: hash
+                    });
+                })
+                
                 exito.classList.replace('invisible', 'visible');
                 setTimeout(() => {
                     window.location.href = "index.html";

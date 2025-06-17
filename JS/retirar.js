@@ -81,6 +81,7 @@ window.retirar = function() {
         const cantidad = parseInt(valorCantidadRetiro);
         const saldo = parseInt(saldoActual);
         const crucial = document.getElementById("crucial")
+        crucial.classList.replace('visible', 'invisible')
         if(cantidad > saldo) {
           crucial.classList.replace('invisible', 'visible')
           return false;

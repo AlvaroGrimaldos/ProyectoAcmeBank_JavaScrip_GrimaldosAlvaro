@@ -1,7 +1,16 @@
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 
+async function encriptarContraseña(texto) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(texto);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+}
+
 // Función para escribir datos de un usuario
-window.crearCuenta = function() {
+window.crearCuenta = async function() {
   const tipoDocumento = document.getElementById("inputDocumento");
   const valorTipoDocumento = tipoDocumento.value;
   const numeroDocumento = document.getElementById("inputNumeroDocumento");
@@ -25,6 +34,7 @@ window.crearCuenta = function() {
   const obligatorio = document.getElementById("obligatorio");
   const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const crucial = document.getElementById("crucial")
+  const hash = await encriptarContraseña(valorContraseña);
 
   if (!valorTipoDocumento.trim() || !valorNumeroDocumento.trim() || !valorContraseña.trim() || !valorNombres.trim() || !valorApellidos.trim() || !valorGenero.trim() || !valorTelefono.trim() || !valorCorreo.trim() || !valorCiudad.trim() || !valorDireccion.trim()) {
     obligatorio.classList.replace('invisible', 'visible')
@@ -67,7 +77,7 @@ window.crearCuenta = function() {
         correo_electronico: valorCorreo,
         ciudad: valorCiudad,
         direccion: valorDireccion,
-        contraseña: valorContraseña,
+        contraseña: hash,
         numero_cuenta: valorNumeroDocumento + 1837214,
         saldo: valorSaldo,
         fecha: new Date().toLocaleDateString(),
