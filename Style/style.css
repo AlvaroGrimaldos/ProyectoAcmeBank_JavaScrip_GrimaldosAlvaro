@@ -40,7 +40,8 @@ html {
     background-color: #2980B9;
     color: white;
     border: none;
-    height: 35px;
+    border-radius: 4px;
+    height: 40px;
     width: 200px;
 }
 
@@ -66,11 +67,17 @@ input::placeholder {
     height: 40px;
     width: 170px;
     font-weight: bold;
+    border-radius: 4px;
     font-size: 15px;
 }
 
 #enlaceRegistrarse {
     color: black;
+    text-decoration: none;
+}
+
+#enlaceRegistrarse:hover {
+    text-decoration: underline;
 }
 
 .visible {

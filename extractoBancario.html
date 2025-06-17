@@ -36,11 +36,7 @@
             <option value="2025"></option>
             <option value="2026"></option>
         </datalist>
-        <br><br>
-        <button onclick="generarExtracto()" class="buttonExtractoBancario" >Generar</button>
-        <button class="buttonExtractoBancario" onclick="window.print()">Imprimir</button>
-        <br>
-        <a href="dashboard.html" id="enlaceSalir">Salir</a>
+        <button onclick="generarExtracto()" class="buttonExtractoBancario" >GENERAR</button>
         <br>
         <span class="invisible" id="obligatorio">*Todos los campos son obligatorios*</span>
         <span class="invisible" id="noHay">*No hay transacciones*</span>
@@ -49,6 +45,11 @@
         <h2 id="numeroCuenta"></h2>
         <h2 id="nombre"></h2>
 
+    </div>
+    <div class="footer">
+        <button class="buttonExtractoBancario" onclick="window.print()">IMPRIMIR</button>
+        <br>
+        <a href="dashboard.html" id="enlaceSalir">Salir</a>
     </div>
 
     <script type="module" src="JS/database.js" defer></script>

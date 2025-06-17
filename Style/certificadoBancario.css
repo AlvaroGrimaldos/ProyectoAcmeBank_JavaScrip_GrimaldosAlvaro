@@ -12,10 +12,11 @@ html {
     background-color: black;
     color: white;
     border: none;
-    height: 35px;
+    height: 40px;
     width: 170px;
     font-weight: bold;
     font-size: 15px;
+    border-radius: 4px;
 }
 
 table {
@@ -34,6 +35,11 @@ td {
 
 #enlaceSalir {
     color: black;
+    text-decoration: none;
+}
+
+#enlaceSalir:hover {
+    text-decoration: underline;
 }
 
 .tittle {

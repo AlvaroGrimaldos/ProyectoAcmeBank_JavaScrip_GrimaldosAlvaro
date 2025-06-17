@@ -37,7 +37,8 @@ html {
 .inputRegistro {
     background-color: #2980B9;
     border: none;
-    height: 35px;
+    height: 40px;
+    border-radius: 4px;
     width: 220px;
 }
 
@@ -112,6 +113,7 @@ input::placeholder {
     border: none;
     height: 44px;
     width: 200px;
+    border-radius: 4px;
     margin-left: 145px;
     font-weight: bold;
     font-size: 15px;
@@ -120,6 +122,11 @@ input::placeholder {
 #enlaceCancelar {
     color: black;
     padding-left: 225px;
+    text-decoration: none;
+}
+
+#enlaceCancelar:hover {
+    text-decoration: underline;
 }
 
 #obligatorio {

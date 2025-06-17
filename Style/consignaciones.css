@@ -41,7 +41,8 @@ html {
     background-color: #2980B9;
     color: white;
     border: none;
-    height: 35px;
+    border-radius: 4px;
+    height: 40px;
     width: 200px;
 }
 
@@ -56,12 +57,18 @@ input::placeholder {
     border: none;
     height: 40px;
     width: 170px;
+    border-radius: 4px;
     font-weight: bold;
     font-size: 15px;
 }
 
 #enlaceCancelar {
     color: black;
+    text-decoration: none;
+}
+
+#enlaceCancelar:hover {
+    text-decoration: underline;
 }
 
 .footer {

@@ -40,7 +40,8 @@ html {
     background-color: #2980B9;
     color: white;
     border: none;
-    height: 35px;
+    height: 40px;
+    border-radius: 4px;
     width: 200px;
 }
 
@@ -53,6 +54,7 @@ input::placeholder {
     background-color: black;
     color: white;
     border: none;
+    border-radius: 4px;
     height: 40px;
     width: 170px;
     font-weight: bold;
@@ -61,6 +63,11 @@ input::placeholder {
 
 #enlaceCancelar{
     color: black;
+    text-decoration: none;
+}
+
+#enlaceCancelar:hover {
+    text-decoration: underline;
 }
 
 .visible {

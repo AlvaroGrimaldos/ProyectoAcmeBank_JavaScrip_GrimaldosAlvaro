@@ -41,8 +41,9 @@ html {
     background-color: #2980B9;
     color: white;
     border: none;
-    height: 35px;
+    height: 40px;
     width: 200px;
+    border-radius: 4px;
 }
 
 input::placeholder {
@@ -58,10 +59,16 @@ input::placeholder {
     width: 170px;
     font-weight: bold;
     font-size: 15px;
+    border-radius: 4px;
 }
 
 #enlaceCancelar {
     color: black;
+    text-decoration: none;
+}
+
+#enlaceCancelar:hover {
+    text-decoration: underline;
 }
 
 .footer {
