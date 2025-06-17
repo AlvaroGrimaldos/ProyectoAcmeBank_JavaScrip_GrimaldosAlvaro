@@ -80,6 +80,11 @@ window.retirar = function() {
         const saldoActual = datosUsuarios.saldo || 0;
         const cantidad = parseInt(valorCantidadRetiro);
         const saldo = parseInt(saldoActual);
+        const crucial = document.getElementById("crucial")
+        if(cantidad > saldo) {
+          crucial.classList.replace('invisible', 'visible')
+          return false;
+        }
         const nuevoSaldo = saldo - cantidad;
         const fecha = new Date().toLocaleDateString();
         const referencia = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
